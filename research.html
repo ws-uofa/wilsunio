@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Sun - Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Wilson Sun</a>
+            <ul class="nav-links">
+                <li><a href="index.html"><span class="en">About</span><span class="zh">关于</span></a></li>
+                <li><a href="research.html" class="active"><span class="en">Project / Research</span><span class="zh">项目与研究</span></a></li>
+                <li><a href="publications.html"><span class="en">Publication</span><span class="zh">发表论文</span></a></li>
+                <li><a href="cv.pdf" target="_blank"><span class="en">CV(PDF)</span><span class="zh">简历(PDF)</span></a></li>
+                <li><a href="#" id="lang-toggle" class="lang-toggle">中文</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="academic-header" style="margin-bottom: 20px;">
+            <h1 class="name-title" style="font-size: 32px;">
+                <span class="en">Projects & Research</span><span class="zh">项目与研究</span>
+            </h1>
+        </header>
+
+        <section class="content-block">
+            <div class="block-content">
+                
+                <div class="item">
+                    <div class="item-header">
+                        <h3>Emotion Classification in Creative Text</h3>
+                        <a href="https://github.com/zlu3s/csc396_project" class="item-link" target="_blank">[Code]</a>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">Investigated domain adaptation strategies for RoBERTa-base models on metaphorical and figurative texts (poetry and lyrics). Conducted an in-depth comparison and analysis of four finetuning strategies: classifier-head-only, partial unfreezing, full fine-tuning, and LoRA.</span>
+                        <span class="zh">探究了基于 RoBERTa-base 模型在隐喻和修辞文本（诗歌和歌词）上的领域自适应策略。深入比较并分析了四种微调策略：仅微调分类头、部分解冻、全量微调和 LoRA。</span>
+                    </p>
+                    <div class="tags"><span>NLP</span><span>RoBERTa</span><span>LoRA</span></div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3>Learning Dense Reward Functions in Chess</h3>
+                        <a href="https://github.com/ws-uofa/csc496_project" class="item-link" target="_blank">[Code]</a>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">Introduced an Inverse Reinforcement Learning (ML-IRL) framework to infer dense, intermediate reward signals from expert demonstrations (Grandmaster and Stockfish games). Developed a custom chess environment following the Gymnasium API with a residual convolutional reward model.</span>
+                        <span class="zh">引入了一种逆向强化学习（ML-IRL）框架，从专家演示（特级大师和 Stockfish 对局）中推断密集的中间奖励信号。开发了一个遵循 Gymnasium API 的自定义国际象棋环境，并结合了一个残差卷积奖励模型。</span>
+                    </p>
+                    <div class="tags"><span>IRL</span><span>Gymnasium</span><span>CNN</span></div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3>Brain-to-Text: Decoding Intracortical Speech</h3>
+                        <a href="https://github.com/Ever-Miller/nejm-brain-to-text" class="item-link" target="_blank">[Code]</a>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">Developed a machine learning pipeline for the Brain-to-Text '25 competition to decode neural activity into natural language for patients with ALS. Implemented a two-stage hybrid Encoder-Decoder framework coupling a BERT-based encoder with a pre-trained GPT-2 decoder. Applied Masked Phoneme Modeling (MPM) and LoRA fine-tuning, achieving a Word Error Rate (WER) of 12.4%, and engineered a Day-Specific Adaptation Layer to handle non-stationary neural signals.</span>
+                        <span class="zh">为 Brain-to-Text '25 竞赛开发了机器学习流水线，将 ALS 患者的神经活动解码为自然语言。实现了结合掩码音素建模（MPM）和 LoRA 微调的 BERT-GPT-2 混合框架，达到了 12.4% 的词错误率（WER），并设计了特定于日期的自适应层以处理非平稳神经信号，增强模型的泛化能力。</span>
+                    </p>
+                    <div class="tags"><span>Machine Learning</span><span>BERT/GPT-2</span><span>LoRA</span></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><p>© 2026 Siyuan Sun.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

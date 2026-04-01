@@ -1,0 +1,296 @@
+:root {
+    --bg-color: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #515154;
+    --accent-blue: #0066cc;
+    --card-bg: #ffffff;
+    --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed; top: 0; width: 100%;
+    background: rgba(245, 245, 247, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+.nav-container {
+    max-width: 860px;
+    margin: 0 auto; padding: 0 20px;
+    height: 54px; display: flex; justify-content: space-between; align-items: center;
+}
+.logo { text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: 18px; letter-spacing: -0.02em;}
+.nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-primary); font-size: 14px; opacity: 0.6; transition: all 0.2s; }
+.nav-links a:hover { opacity: 1; }
+
+/* 当前页面的导航高亮 */
+.nav-links a.active {
+    opacity: 1;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.container { max-width: 860px; margin: 0 auto; padding: 120px 20px 60px; }
+
+/* 学术表头 */
+.academic-header { margin-bottom: 40px; padding: 0 10px; }
+.name-title { font-size: 42px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 8px; }
+.affiliation { font-size: 18px; color: var(--text-secondary); margin-bottom: 16px; }
+.quick-links { font-size: 15px; color: var(--text-secondary); }
+.quick-links a { color: var(--accent-blue); text-decoration: none; margin: 0 4px; }
+.quick-links a:hover { text-decoration: underline; }
+
+/* 等宽内容块 */
+.content-block {
+    background-color: var(--card-bg);
+    border-radius: 16px; padding: 40px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03); width: 100%;
+}
+/* 修改后的超链接样式 */
+.content-block a { 
+    color: var(--accent-blue); 
+    text-decoration: underline; /* 默认显示下划线，明确告知这是链接 */
+    text-decoration-color: rgba(0, 102, 204, 0.3); /* 降低下划线透明度，不喧宾夺主 */
+    text-underline-offset: 3px; /* 让下划线稍微往下沉，避免切断英文字母的尾巴 (如 g, p, y) */
+    margin: 0 4px; 
+    transition: text-decoration-color 0.2s ease; /* 添加平滑过渡动画 */
+}
+
+.content-block a:hover { 
+    text-decoration-color: var(--accent-blue); /* 鼠标悬停时下划线变实，增加交互反馈 */
+}
+.block-title { font-size: 22px; font-weight: 600; margin-bottom: 24px; border-bottom: 1px solid #e5e5ea; padding-bottom: 12px; }
+.block-content p { font-size: 16px; color: var(--text-secondary); }
+
+/* 项目与论文条目 */
+.item { margin-bottom: 32px; }
+.item:last-child { margin-bottom: 0; }
+.item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.item-header h3 { font-size: 18px; font-weight: 600; }
+.item-link { font-size: 14px; color: var(--accent-blue); text-decoration: none; }
+.item-link:hover { text-decoration: underline; }
+.item-desc { margin-bottom: 12px !important; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { background-color: var(--bg-color); color: var(--text-secondary); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-family: monospace; }
+
+.paper-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.paper-authors { font-size: 15px; color: var(--text-secondary); margin-bottom: 4px; }
+.paper-venue { font-size: 15px; font-weight: 500; color: #1d1d1f; margin-bottom: 8px; }
+.paper-links a { font-size: 14px; color: var(--accent-blue); text-decoration: none; margin-right: 12px; }
+.paper-links a:hover { text-decoration: underline; }
+
+.footer { text-align: center; padding: 40px 20px; font-size: 13px; color: var(--text-secondary); }
+
+/* =========================================
+   双语切换逻辑 (默认显示英文 EN)
+   ========================================= */
+.zh { display: none; } /* 默认隐藏中文 */
+
+/* 当 body 拥有 lang-zh 类时，反转显示逻辑 */
+body.lang-zh .en { display: none; }
+body.lang-zh .zh { display: inline; }
+
+.lang-toggle { 
+    font-weight: 600 !important; 
+    color: var(--text-primary) !important; 
+    background: #e5e5ea; padding: 4px 10px; border-radius: 6px; opacity: 1 !important;
+}
+.lang-toggle:hover { background: #d1d1d6; }
+
+.zh, .en { animation: textFadeIn 0.3s ease forwards; }
+@keyframes textFadeIn {
+    0% { opacity: 0; transform: translateY(2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .content-block { padding: 24px; }
+    
+    /* 取消原有的隐藏逻辑（去掉了 display: none） */
+
+    /* 1. 顶部栏自适应高度，允许内容换行 */
+    .nav-container {
+        height: auto;          /* 取消原本固定的 54px 高度 */
+        min-height: 54px;      
+        flex-wrap: wrap;       /* 允许 Logo 和导航菜单分两行显示 */
+        padding: 12px 20px;
+    }
+    
+    /* 2. 导航菜单横向排列，超出屏幕可以左右丝滑滑动 */
+    .nav-links {
+        width: 100%;           /* 占据第二行全部宽度 */
+        overflow-x: auto;      /* 允许横向滑动 */
+        justify-content: flex-start;
+        gap: 16px;             /* 链接之间的间距稍微缩小一点 */
+        padding-top: 8px;      /* 与第一行的 Logo 拉开一点距离 */
+        -webkit-overflow-scrolling: touch; /* 让 iOS 设备上的滑动更丝滑 */
+    }
+    
+    /* 3. 隐藏丑陋的原生滚动条，但保留滑动功能 */
+    .nav-links::-webkit-scrollbar { 
+        display: none; 
+    }
+    .nav-links { 
+        scrollbar-width: none; 
+    }
+}
+
+/* --- 个人信息区域布局 --- */
+.header-flex {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 40px;           /* 照片和文字之间的间距 */
+    margin-bottom: 40px;
+}
+
+/* --- 圆角矩形照片样式 --- */
+.profile-photo img {
+    width: 180px;         /* 宽度：学术主页建议 160px - 200px 之间 */
+    height: 180px;        /* 高度：设为相同则为正方形，不同则为长方形 */
+    object-fit: cover;    /* 核心属性：确保图片裁切时不拉伸变形 */
+    
+    /* 风格关键：圆角矩形 */
+    border-radius: 16px;  /* 16px 的圆角看起来非常现代且稳重 */
+    
+    /* 装饰效果 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 柔和的阴影 */
+    border: 1px solid rgba(0, 0, 0, 0.05);      /* 极淡的边框，防止白底照片消失 */
+    transition: transform 0.3s ease;            /* 鼠标悬停动画（可选） */
+}
+
+/* 鼠标悬停时微动，增加交互感 */
+.profile-photo img:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 文字内容微调 --- */
+.header-text {
+    flex: 1;
+}
+
+.name-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.affiliation {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* --- 移动端响应式适配 --- */
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column; /* 手机端改为上下排列 */
+        text-align: center;      /* 文字居中 */
+        gap: 20px;
+    }
+
+    .profile-photo img {
+        width: 150px;           /* 手机端稍微缩小照片 */
+        height: 150px;
+    }
+}
+
+/* =========================================
+   时间线 / 经历列表布局 (终极 CSS Grid 强力对齐版)
+   ========================================= */
+.timeline-item {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 核心：使用 Grid 布局，强制分为左右两列 */
+.timeline-row {
+    display: grid;
+    /* 1fr 代表左侧占满剩余空间，auto 代表右侧仅根据内容自适应宽度 */
+    grid-template-columns: 1fr auto; 
+    column-gap: 20px;      /* 左右两列的间距，防止文字贴在一起 */
+    align-items: baseline; /* 保证左右两边的文字在同一条水平线上 */
+}
+
+/* 第一行的间距 */
+.timeline-header {
+    margin-bottom: 4px; 
+}
+
+/* 第二行的间距 */
+.timeline-sub {
+    margin-bottom: 12px; 
+}
+
+/* --- 文字样式定义 --- */
+.timeline-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.timeline-org {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent-blue);
+    margin: 0;
+}
+
+/* 时间和地点统一样式，被 Grid 强制锁定在右侧 */
+.timeline-date, .timeline-location {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: monospace;
+    text-align: right;
+    white-space: nowrap; /* 强制不换行 */
+}
+
+.timeline-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.timeline-details li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+/* 移动端响应式适配 */
+@media (max-width: 600px) {
+    .timeline-row {
+        grid-template-columns: 1fr; /* 手机端变成单列 */
+        row-gap: 4px; /* 上下间距 */
+    }
+    .timeline-date, .timeline-location {
+        text-align: left; /* 手机端时间地点靠左 */
+        font-size: 13px;
+        color: #8e8e93; /* 手机端颜色稍微调淡一点，区分层级 */
+    }
+    .timeline-sub {
+        margin-top: 8px;
+    }
+}
