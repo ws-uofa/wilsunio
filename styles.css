@@ -119,37 +119,36 @@ body.lang-zh .zh { display: inline; }
 }
 
 @media (max-width: 768px) {
-    .content-block { padding: 24px; }
-    
-    /* 取消原有的隐藏逻辑（去掉了 display: none） */
-
-    /* 1. 顶部栏自适应高度，允许内容换行 */
     .nav-container {
-        height: auto;          /* 取消原本固定的 54px 高度 */
-        min-height: 54px;      
-        flex-wrap: wrap;       /* 允许 Logo 和导航菜单分两行显示 */
+        height: auto;
+        min-height: 54px;
+        display: flex;        /* 确保是 flex 布局 */
+        flex-direction: column; /* 建议移动端 Logo 在上，菜单在下 */
         padding: 12px 20px;
     }
     
-    /* 2. 导航菜单横向排列，超出屏幕可以左右丝滑滑动 */
     .nav-links {
-        width: 100%;           /* 占据第二行全部宽度 */
-        overflow-x: auto;      /* 允许横向滑动 */
-        justify-content: flex-start;
-        gap: 16px;             /* 链接之间的间距稍微缩小一点 */
-        padding-top: 8px;      /* 与第一行的 Logo 拉开一点距离 */
-        -webkit-overflow-scrolling: touch; /* 让 iOS 设备上的滑动更丝滑 */
+        width: 100%;
+        display: flex;         /* 开启 flex 布局 */
+        flex-direction: row;   /* 横向排列 */
+        flex-wrap: nowrap;     /* 绝对不允许换行，这是滚动的关键 */
+        overflow-x: auto;      /* 开启横向溢出滚动 */
+        gap: 16px;
+        padding-top: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; 
     }
-    
-    /* 3. 隐藏丑陋的原生滚动条，但保留滑动功能 */
+
+    /* 必须加在子元素上的样式 */
+    .nav-links > * { 
+        flex-shrink: 0;        /* 关键：防止子元素被挤压 */
+        white-space: nowrap;   /* 关键：防止文字换行 */
+    }
+
     .nav-links::-webkit-scrollbar { 
         display: none; 
     }
-    .nav-links { 
-        scrollbar-width: none; 
-    }
 }
-
 /* --- 个人信息区域布局 --- */
 .header-flex {
     display: flex;
