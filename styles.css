@@ -119,6 +119,7 @@ body.lang-zh .zh { display: inline; }
 }
 
 /* 仅在移动端屏幕（宽度 <= 768px）生效，桌面端保持原样 */
+/* 仅在移动端屏幕（宽度 <= 768px）生效，桌面端保持原样 */
 @media (max-width: 768px) {
     /* 1. 重新调整主容器，分上下两层布局 */
     .nav-container {
