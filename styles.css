@@ -84,9 +84,10 @@ body {
     /* 关键：在每个项目的底部画一条 1像素宽、虚线、带透明度的黑色边框 */
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1); 
 }
-.item:last-child { margin-bottom: 0; }
+.item:last-child { margin-bottom: 0; border-bottom: none; }
 .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .item-header h3 { font-size: 18px; font-weight: 600; }
+.item-header h4 { font-size: 18px; font-weight: 500; margin-top: 4px}
 /* 链接组内部紧凑排列 */
 .item-links-group {
     display: flex;

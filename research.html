@@ -1,4 +1,3 @@
-<!--[cite: 2] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@
             <a href="index.html" class="logo">Wilson Sun</a>
             <ul class="nav-links">
                 <li><a href="index.html"><span class="en">About</span><span class="zh">关于</span></a></li>
-                <li><a href="research.html" class="active"><span class="en">Research / Project</span><span class="zh">研究与项目</span></a></li>
+                <li><a href="research.html" class="active"><span class="en">Research / Project</span><span class="zh">科研与项目</span></a></li>
                 <li><a href="publications.html"><span class="en">Publication</span><span class="zh">论文产出</span></a></li>
                 <li><a href="cv.pdf" target="_blank"><span class="en">CV</span><span class="zh">简历</span></a></li>
                 <li><a href="#" id="lang-toggle" class="lang-toggle">中文</a></li>
@@ -23,26 +22,77 @@
     </nav>
 
     <main class="container">
-        <!-- 修改了 header 样式以匹配主页的呼吸感 -->
         <header class="academic-header">
             <h1 class="name-title">
-                <span class="en">Research & Projects</span><span class="zh">研究与项目</span>
+                <span class="en">Research & Projects</span><span class="zh">科研与项目</span>
             </h1>
             <p class="affiliation">
                 <span class="en"><strong>Research</strong> refers to novel academic inquiries, while <strong>Project</strong> encompass the implementation or analysis of existing approach.</span>
-                <span class="zh"><strong>研究</strong>指具有新颖性的学术探究，<strong>项目</strong>指对既有方法的分析或应用。</span>
+                <span class="zh"><strong>科研</strong>指具有新颖性的学术探究，<strong>项目</strong>指对既有方法的分析或应用。</span>
             </p>
         </header>
 
-        <!-- 使用 .content-block 包装内容[cite: 1, 3] -->
         <section class="content-block">
-            <!-- 添加了与主页一致的 block-title 分割线[cite: 1, 3] -->
+            <h2 class="block-title">
+                <span class="en">Research</span><span class="zh">科研</span>
+            </h2>
+
+            <div class="block-content">
+                <div class="item">
+                    <div class="item-header">
+                        <h3>
+                            <span class="en">Ongoing: <strong>Joint optimization of Neural Retrieval System</strong></span>
+                            <span class="zh">Ongoing: <strong>Joint optimization of Neural Retrieval System</strong></span>
+                        </h3>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">
+                            This research aims to develop a unified joint-optimization framework for neural information retrieval, 
+                            leveraging state-of-the-art open-source foundations (e.g. Qwen2.5-7B and BGE-Reranker-v2). 
+                            By implementing an end-to-end co-training paradigm across the dense retriever, query expander, and reranker, 
+                            the system facilitates multi-stage information propagation to transcend the performance ceilings inherent in isolated trained, modular components.
+                        </span>
+                        <span class="zh">本研究旨在构建一套针对神经信息检索的统一联合优化框架，并充分利用前沿的开源基础模型（例如 Qwen2.5-7B 和 BGE-Reranker-v2）。通过在稠密检索器、查询扩展器和重排序器之间实施端到端的协同训练范式，该系统得以实现多阶段的信息高效传递，从而突破了各模块独立训练时所固有的性能瓶颈。</span>
+                    </p>
+                    <div class="tags"><span>Neural IR</span><span>End-to-end optimization</span><span>Dense Retrieval</span><span>Query Exansion</span><span>Reranking</span></div>
+
+                    <div class="item-header">
+                        <h4>
+                            <span class="en">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
+                            <span class="zh">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
+                        </h4>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">
+                            <strong>Innovative Architecture</strong>: We designed and implemented an end-to-end EM optimization framework. Through E-Step—which utilizes an LLM to explore diverse expansion paths and employs a Reranker to evaluate rewards—and the M-Step—which performs LoRA fine-tuning based on high-reward samples—this framework enables the generative model to precisely align with the preferences of the retriever.
+                        </span>
+                        <span class="zh"><strong>创新架构</strong>：设计并实现了一套端到端的 EM 优化框架，通过 E-Step（利用 LLM 探索多样化扩展路径并由 Reranker 评估奖励）与 M-Step（基于高奖励样本进行 LoRA 微调）的交替迭代，使生成模型精准对齐检索器的偏好</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en">
+                            <strong>Reward-Guided Learning</strong>: The introduction of the Reward Margin mechanism and the DDLP (Delta-Driven Laziness-Penalty) loss function effectively resolves the "negative return" problem in query expansion, guarenteed better performance and Generalization Capability.
+                        </span>
+                        <span class="zh"><strong>基于奖励的学习</strong>：引入 Reward Margin 机制 与 DDLP (Delta-Driven Laziness-Penalty) 损失函数，有效解决了查询扩展中的“负收益”问题，确保检索性能和泛化能力。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en">
+                            <strong>Inspiring Result</strong>: Achieved a 4% absolute gain in NDCG@10 on the TREC DL 2019 benchmark by integrating the fine-tuned Query Expander into a state-of-the-art Retrieve-and-Rerank pipeline.
+                        </span>
+                        <span class="zh"><strong>结果提升</strong>：通过将经过微调的查询扩展器集成至最先进的“检索-重排”流水线中，在 TREC DL 2019 基准测试上实现了 NDCG@10 4% 的绝对提升。</span>
+                    </p>
+                    <div class="tags"><span>LLM-based QE</span><span>EM Algorithm</span><span>Reward-Guided Alignment</span><span>Cross-Encoder Reranker</span></div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="content-block">
             <h2 class="block-title">
                 <span class="en">Projects</span><span class="zh">项目</span>
             </h2>
             
             <div class="block-content">
-                <!-- 项目条目[cite: 2] -->
                 <div class="item">
                     <div class="item-header">
                         <h3>Emotion Classification in Creative Text</h3>
