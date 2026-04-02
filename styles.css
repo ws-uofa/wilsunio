@@ -77,7 +77,13 @@ body {
 .block-content p { font-size: 16px; color: var(--text-secondary); }
 
 /* 项目与论文条目 */
-.item { margin-bottom: 32px; }
+/* .item { margin-bottom: 32px; } */
+.item {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    /* 关键：在每个项目的底部画一条 1像素宽、虚线、带透明度的黑色边框 */
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1); 
+}
 .item:last-child { margin-bottom: 0; }
 .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .item-header h3 { font-size: 18px; font-weight: 600; }
