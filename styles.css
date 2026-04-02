@@ -87,8 +87,21 @@ body {
 .item:last-child { margin-bottom: 0; }
 .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .item-header h3 { font-size: 18px; font-weight: 600; }
-.item-link { font-size: 14px; color: var(--accent-blue); text-decoration: none; }
-.item-link:hover { text-decoration: underline; }
+/* 链接组内部紧凑排列 */
+.item-links-group {
+    display: flex;
+    gap: 3px; /* 控制 [Report] 和 [Code] 之间的精确间距 */
+}
+
+/* 移除之前可能存在的 margin-left */
+.item-link {
+    font-size: 14px;
+    color: var(--accent-blue);
+    opacity: 0.87;
+    text-decoration: none !important;
+    margin: 0; /* 清除默认边距 */
+}
+.item-link:hover { opacity: 1; text-decoration: none !important; }
 .item-desc { margin-bottom: 12px !important; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
