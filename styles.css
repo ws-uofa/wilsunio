@@ -105,6 +105,13 @@ body {
 .item-link:hover { opacity: 1; text-decoration: none !important; }
 .item-desc { margin-bottom: 12px !important; }
 
+.sub-task {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 2px solid #e5e5ea;
+    margin-top: 15px;
+}
+
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tags span { background-color: var(--bg-color); color: var(--text-secondary); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-family: monospace; }
 

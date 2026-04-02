@@ -28,7 +28,7 @@
             </h1>
             <p class="affiliation">
                 <span class="en"><strong>Research</strong> refers to novel academic inquiries, while <strong>Project</strong> encompass the implementation or analysis of existing approach.</span>
-                <span class="zh"><strong>科研</strong>指具有新颖性的学术探究，<strong>项目</strong>指对既有方法的分析或应用。</span>
+                <span class="zh"><strong>科研</strong>指具有创新性的学术探究，<strong>项目</strong>指对既有方法的分析或应用。</span>
             </p>
         </header>
 
@@ -56,31 +56,33 @@
                     </p>
                     <div class="tags"><span>Neural IR</span><span>End-to-end optimization</span><span>Dense Retrieval</span><span>Query Exansion</span><span>Reranking</span></div>
 
-                    <div class="item-header">
-                        <h4>
-                            <span class="en">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
-                            <span class="zh">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
-                        </h4>
+                    <div class="sub-task">
+                        <div class="item-header">
+                            <h4>
+                                <span class="en">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
+                                <span class="zh">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
+                            </h4>
+                        </div>
+                        <p class="item-desc">
+                            <span class="en">
+                                <strong>Innovative Architecture</strong>: We designed and implemented an end-to-end EM optimization framework. Through E-Step—which utilizes an LLM to explore diverse expansion paths and employs a Reranker to evaluate rewards—and the M-Step—which performs LoRA fine-tuning based on high-reward samples—this framework enables the generative model to precisely align with the preferences of the retriever.
+                            </span>
+                            <span class="zh"><strong>创新架构</strong>：设计并实现了一套端到端的 EM 优化框架，通过 E-Step（利用 LLM 探索多样化扩展路径并由 Reranker 评估奖励）与 M-Step（基于高奖励样本进行 LoRA 微调）的交替迭代，使生成模型精准对齐检索器的偏好</span>
+                        </p>
+                        <p class="item-desc">
+                            <span class="en">
+                                <strong>Reward-Guided Learning</strong>: The introduction of the Reward Margin mechanism and the DDLP (Delta-Driven Laziness-Penalty) loss function effectively resolves the "negative return" problem in query expansion, guarenteed better performance and Generalization Capability.
+                            </span>
+                            <span class="zh"><strong>基于奖励的学习</strong>：引入 Reward Margin 机制 与 DDLP (Delta-Driven Laziness-Penalty) 损失函数，有效解决了查询扩展中的“负收益”问题，确保检索性能和泛化能力。</span>
+                        </p>
+                        <p class="item-desc">
+                            <span class="en">
+                                <strong>Inspiring Result</strong>: Achieved a 4% absolute gain in NDCG@10 on the TREC DL 2019 benchmark by integrating the fine-tuned Query Expander into a state-of-the-art Retrieve-and-Rerank pipeline.
+                            </span>
+                            <span class="zh"><strong>结果提升</strong>：通过将经过微调的查询扩展器集成至最先进的“检索-重排”流水线中，在 TREC DL 2019 基准测试上实现了 NDCG@10 4% 的绝对提升。</span>
+                        </p>
+                        <div class="tags"><span>LLM-based QE</span><span>EM Algorithm</span><span>Reward-Guided Alignment</span><span>Cross-Encoder Reranker</span></div>
                     </div>
-                    <p class="item-desc">
-                        <span class="en">
-                            <strong>Innovative Architecture</strong>: We designed and implemented an end-to-end EM optimization framework. Through E-Step—which utilizes an LLM to explore diverse expansion paths and employs a Reranker to evaluate rewards—and the M-Step—which performs LoRA fine-tuning based on high-reward samples—this framework enables the generative model to precisely align with the preferences of the retriever.
-                        </span>
-                        <span class="zh"><strong>创新架构</strong>：设计并实现了一套端到端的 EM 优化框架，通过 E-Step（利用 LLM 探索多样化扩展路径并由 Reranker 评估奖励）与 M-Step（基于高奖励样本进行 LoRA 微调）的交替迭代，使生成模型精准对齐检索器的偏好</span>
-                    </p>
-                    <p class="item-desc">
-                        <span class="en">
-                            <strong>Reward-Guided Learning</strong>: The introduction of the Reward Margin mechanism and the DDLP (Delta-Driven Laziness-Penalty) loss function effectively resolves the "negative return" problem in query expansion, guarenteed better performance and Generalization Capability.
-                        </span>
-                        <span class="zh"><strong>基于奖励的学习</strong>：引入 Reward Margin 机制 与 DDLP (Delta-Driven Laziness-Penalty) 损失函数，有效解决了查询扩展中的“负收益”问题，确保检索性能和泛化能力。</span>
-                    </p>
-                    <p class="item-desc">
-                        <span class="en">
-                            <strong>Inspiring Result</strong>: Achieved a 4% absolute gain in NDCG@10 on the TREC DL 2019 benchmark by integrating the fine-tuned Query Expander into a state-of-the-art Retrieve-and-Rerank pipeline.
-                        </span>
-                        <span class="zh"><strong>结果提升</strong>：通过将经过微调的查询扩展器集成至最先进的“检索-重排”流水线中，在 TREC DL 2019 基准测试上实现了 NDCG@10 4% 的绝对提升。</span>
-                    </p>
-                    <div class="tags"><span>LLM-based QE</span><span>EM Algorithm</span><span>Reward-Guided Alignment</span><span>Cross-Encoder Reranker</span></div>
                 </div>
             </div>
 
@@ -102,8 +104,8 @@
                         </div>
                     </div>
                     <p class="item-desc">
-                        <span class="en">Investigated domain adaptation strategies for RoBERTa-base models on metaphorical and figurative texts (poetry and lyrics). Conducted an in-depth comparison and analysis of four finetuning strategies: classifier-head-only, partial unfreezing, full fine-tuning, and LoRA.</span>
-                        <span class="zh">探究了基于 RoBERTa-base 模型在隐喻和修辞文本（诗歌和歌词）上的领域自适应策略。深入比较并分析了四种微调策略：仅微调分类头、部分解冻、全量微调和 LoRA。</span>
+                        <span class="en">Investigated <strong>domain adaptation</strong> and fine-tuning strategies for the <strong>RoBERTa-base</strong> model to classify emotions in figurative texts such as poetry and song lyrics. We implemented a <strong>two-stage training pipeline</strong> that transferred emotional priors from large-scale social media data to the complex, metaphor-rich domain of creative writing. By systematically comparing four parameter-update strategies—including <strong>LoRA</strong> and <strong>full fine-tuning</strong>—the study revealed that full fine-tuning yields the best performance (Poem F1≈0.60) for capturing deep semantic relationships and figurative language.</span>
+                        <span class="zh">研究了 <strong>RoBERTa</strong> 基础模型在诗歌和歌词等比喻性文本情感分类中的<strong>领域自适应</strong>与微调策略。实现了一套<strong>两阶段训练</strong>流水线，将大规模社交媒体数据的情感先验知识迁移至蕴含丰富隐喻的文学创作领域。通过系统性对比 <strong>LoRA</strong> 和<strong>全量微调</strong>等四种参数更新策略，研究发现全量微调在捕捉深层语义关系和比喻性修辞方面表现最优（诗歌数据集 F1≈0.60）。</span>
                     </p>
                     <div class="tags"><span>NLP</span><span>RoBERTa</span><span>LoRA</span></div>
                 </div>
@@ -111,15 +113,15 @@
                 <!-- 分割线或间距由 CSS 的 .item 控制 -->
                 <div class="item">
                     <div class="item-header">
-                        <h3>Learning Dense Reward Functions in Chess</h3>
+                        <h3>ML-IRL for Learning Dense Reward Functions in Chess</h3>
                         <div class="item-links-group">
                             <a href="./CSC496_Final_Report-3.pdf" class="item-link" target="_blank">[Report]</a>
                             <a href="https://github.com/ws-uofa/csc496_project" class="item-link" target="_blank">[Code]</a>
                         </div>
                     </div>
                     <p class="item-desc">
-                        <span class="en">Introduced an Inverse Reinforcement Learning (ML-IRL) framework to infer dense, intermediate reward signals from expert demonstrations (Grandmaster and Stockfish games). Developed a custom chess environment following the Gymnasium API with a residual convolutional reward model.</span>
-                        <span class="zh">引入了一种逆向强化学习（ML-IRL）框架，从专家演示（特级大师和 Stockfish 对局）中推断密集的中间奖励信号。开发了一个遵循 Gymnasium API 的自定义国际象棋环境，并结合了一个残差卷积奖励模型。</span>
+                        <span class="en">Developed an <strong>Inverse Reinforcement Learning (IRL)</strong> framework to infer dense, intermediate reward functions from expert chess demonstrations to overcome the temporal credit assignment problem in sparse terminal rewards. We constructed a custom <strong>Gymnasium</strong> environment and a <strong>ResNet</strong>-based reward model to map temporally stacked board states to scalar evaluative signals. Through saliency map analysis, the project demonstrated that CNN-based IRL is particularly effective at capturing "visual" strategic patterns and human-like positional intuition compared to pure engine calculation.</span>
+                        <span class="zh">开发了一套<strong>对抗性逆强化学习（IRL）</strong>框架，从专家棋谱中推断稠密的中间奖励函数，以解决稀疏终端奖励带来的信用分配难题。构建了自定义 <storng>Gymnasium</strong> 环境和基于 <strong>ResNet</strong> 的奖励模型，将时序堆叠的棋盘状态映射为标量评估信号。通过显著性图（Saliency Maps）分析，该项目证明了相比于纯引擎计算，基于 CNN 的 IRL 在捕捉“视觉化”策略模式和类人位置直觉方面尤为有效。</span>
                     </p>
                     <div class="tags"><span>IRL</span><span>Gymnasium</span><span>CNN</span></div>
                 </div>
@@ -133,10 +135,24 @@
                         </div>
                     </div>
                     <p class="item-desc">
-                        <span class="en">Developed a machine learning pipeline for the Brain-to-Text '25 competition to decode neural activity into natural language for patients with ALS. Implemented a two-stage hybrid Encoder-Decoder framework coupling a BERT-based encoder with a pre-trained GPT-2 decoder. Applied Masked Phoneme Modeling (MPM) and LoRA fine-tuning, achieving a Word Error Rate (WER) of 12.4%, and engineered a Day-Specific Adaptation Layer to handle non-stationary neural signals.</span>
+                        <span class="en">Developed a machine learning pipeline for the Brain-to-Text '25 competition to decode neural activity into natural language for patients with ALS. Implemented a <strong>two-stage hybrid Encoder-Decoder framework</strong> coupling a BERT-based encoder with a pre-trained GPT-2 decoder. Applied Masked Phoneme Modeling (MPM) and LoRA fine-tuning, achieving a Word Error Rate (WER) of 12.4%, and engineered a Day-Specific Adaptation Layer to handle non-stationary neural signals.</span>
                         <span class="zh">为 Brain-to-Text '25 竞赛开发了机器学习流水线，将 ALS 患者的神经活动解码为自然语言。实现了结合掩码音素建模（MPM）和 LoRA 微调的 BERT-GPT-2 混合框架，达到了 12.4% 的词错误率（WER），并设计了特定于日期的自适应层以处理非平稳神经信号。</span>
                     </p>
                     <div class="tags"><span>Machine Learning</span><span>BERT/GPT-2</span><span>LoRA</span></div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3>Cache(d) Compression: Increasing Effective Storage within RISC-V</h3>
+                        <div class="item-links-group">
+                            <a href="./ECE462_Final_Report.pdf" class="item-link" target="_blank">[Report]</a>
+                        </div>
+                    </div>
+                    <p class="item-desc">
+                        <span class="en">Explored transparent "ZipCache-style" compression on RISC-V architectures (Rocket Chip, BOOM, and VexRiscv) to increase effective DRAM cache capacity without altering the memory hierarchy. Using Chipyard-based simulations, we modeled 4 KB compressed pages with a 2x effective capacity gain and an estimated 15-cycle decompression latency implemented via RoCC-style paths or software NOP stalls. The results indicated that the compressed cache roughly halved miss rates and doubled throughput under heavy capacity pressure by avoiding high-latency SSD-backed misses (500 cycles). This project highlights the architectural trade-offs between decompression overhead and cache hit rates in memory-constrained environments.</span>
+                        <span class="zh">在 RISC-V 架构（Rocket Chip, BOOM 和 VexRiscv）上探索了“ZipCache 风格”的透明压缩技术，旨在不改变内存层级结构的前提下有效扩大 DRAM 缓存容量。基于 Chipyard 仿真平台，通过模拟 4 KB 压缩页实现了 2 倍的逻辑容量提升，并利用 RoCC 路径或软件 NOP 指令模拟了约 15 个时钟周期的解压延迟。实验结果表明，在高容量压力下，该压缩缓存方案将缺失率降低了约一半，并将吞吐量提升了近两倍，其核心优势在于通过极小的解压开销避免了高昂的 SSD 访问延迟（约 500 周期）。该项目深入分析了内存受限环境下解压开销与有效容量之间的架构权衡。</span>
+                    </p>
+                    <div class="tags"><span>RISC-V Architecture</span><span>Cache Compression</span><span>Chipyard</span></div>
                 </div>
             </div>
         </section>
