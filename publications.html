@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications and preprints by Siyuan (Wilson) Sun in natural language processing and information retrieval.">
     <title>Wilson Sun - Publications</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,51 +16,108 @@
                 <li><a href="index.html"><span class="en">About</span><span class="zh">关于</span></a></li>
                 <li><a href="research.html"><span class="en">Research / Project</span><span class="zh">科研与项目</span></a></li>
                 <li><a href="publications.html" class="active"><span class="en">Publication</span><span class="zh">论文产出</span></a></li>
-                <li><a href="cv.pdf" target="_blank"><span class="en">CV</span><span class="zh">简历</span></a></li>
+                <li><a href="cv.pdf" target="_blank" rel="noopener noreferrer"><span class="en">CV</span><span class="zh">简历</span></a></li>
                 <li><a href="#" id="lang-toggle" class="lang-toggle">中文</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <!-- 修改了 header 样式以匹配主页的呼吸感 -->
-        <header class="academic-header">
+        <header class="academic-header publication-header">
             <h1 class="name-title">
-                <span class="en">Publication</span><span class="zh">论文产出</span>
+                <span class="en">Publications</span><span class="zh">论文产出</span>
             </h1>
             <p class="affiliation">
-                <span class="en">I am actively working on several research projects in NLP and on the way of publishing my first research parper.</span>
-                <span class="zh">目前，我正积极从事自然语言处理领域的研究项目。</span>
+                <span class="en">Research papers and preprints in natural language processing and information retrieval.</span>
+                <span class="zh">自然语言处理与信息检索方向的研究论文与预印本。</span>
             </p>
         </header>
 
-        <section class="content-block">
-            <div class="block-content">
+        <section class="content-block publication-section" aria-labelledby="publications-2026">
+            <h2 class="block-title publication-year-title" id="publications-2026">
+                <span>2026</span>
+                <span class="publication-count">
+                    <span class="en">1 paper</span><span class="zh">1 篇论文</span>
+                </span>
+            </h2>
 
-                
-                <p>
-                    <span class="en">My latest work on <strong>Joint optimization of Neural Retrieval System</strong> is being prepared for submission to EMNLP 2026.</span>
-                    <span class="zh">我关于<strong>Joint optimization of Neural Retrieval System</strong>的最新工作，正准备投稿至 EMNLP 2026。</span>
-                </p>
-                <p style="margin-top: 1px;"></p>
-                <p>
-                    <span class="en">For a detailed breakdown of the methodology and preliminary results, please visit my <a href="research.html">Research / Project page.</a></span>
-                    <span class="zh">欢迎您访问我的<a href="research.html">研究与项目页面</a>了解方法论及初步结果的详细介绍。</span>
-                </p>
-
-
-
-                <!-- <div class="item">
-                    <h4 class="paper-title">[Paper Title: A Novel Approach to LLM Prompt Compression]</h4>
-                    <p class="paper-authors"><strong>Your Name*</strong>, Co-Author*, Advisor Name. (*Equal Contribution)</p>
-                    <p class="paper-venue">In Proceedings of ACL 2026 (Under Review)</p>
-                    <div class="paper-links">
-                        <a href="[Arxiv链接]">[arXiv]</a>
-                        <a href="[PDF链接]">[PDF]</a>
-                        <a href="[Code链接]">[Code]</a>
+            <div class="block-content publication-list">
+                <article class="publication-entry">
+                    <div class="publication-badges" aria-label="Publication status">
+                        <span class="publication-badge publication-badge-review">
+                            <span class="en">Under Review</span><span class="zh">审稿中</span>
+                        </span>
                     </div>
-                </div> -->
-                
+
+                    <h3 class="publication-title">
+                        <a href="https://arxiv.org/abs/2608.25521" target="_blank" rel="noopener noreferrer">
+                            Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration
+                        </a>
+                    </h3>
+
+                    <p class="publication-authors">
+                        <strong>Siyuan Sun</strong>,
+                        <a href="https://surdeanu.cs.arizona.edu/mihai/" target="_blank" rel="noopener noreferrer">Mihai Surdeanu</a>
+                    </p>
+
+                    <p class="publication-venue">
+                        <span class="en">Under review at <strong>WSDM 2027</strong> · arXiv:2608.25521</span>
+                        <span class="zh">投稿至 <strong>WSDM 2027</strong>，审稿中 · arXiv:2608.25521</span>
+                    </p>
+
+                    <p class="publication-highlight">
+                        <span class="en">We show that <strong>how query expansions are integrated into dense retrievers is itself a critical research variable</strong>, not merely a downstream implementation detail. AnchorQE isolates this integration choice and improves retrieval effectiveness by up to 12.89% across TREC-DL, LoTTE, and BEIR without task-specific training.</span>
+                        <span class="zh">我们表明，<strong>查询扩展如何被整合进稠密检索器，本身就是一个关键的研究变量</strong>，而不仅仅是生成之后的实现细节。AnchorQE 将这一 integration choice 单独建模，在无需任务特定训练的情况下，于 TREC-DL、LoTTE 与 BEIR 上最高提升 12.89% 的检索有效性。</span>
+                    </p>
+
+                    <div class="publication-actions" aria-label="Publication resources">
+                        <a class="publication-action publication-action-primary" href="https://arxiv.org/abs/2608.25521" target="_blank" rel="noopener noreferrer" aria-label="Open the arXiv abstract page">
+                            arXiv <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="publication-action" href="https://arxiv.org/pdf/2608.25521" target="_blank" rel="noopener noreferrer" aria-label="Open the paper PDF">
+                            PDF <span aria-hidden="true">↗</span>
+                        </a>
+                        <button class="publication-action publication-toggle" type="button" data-panel-target="abstract-anchorqe" aria-controls="abstract-anchorqe" aria-expanded="false">
+                            <span class="en">Abstract</span><span class="zh">摘要</span>
+                        </button>
+                        <button class="publication-action publication-toggle" type="button" data-panel-target="bibtex-anchorqe" aria-controls="bibtex-anchorqe" aria-expanded="false">
+                            BibTeX
+                        </button>
+                    </div>
+
+                    <div class="publication-panel" id="abstract-anchorqe" hidden>
+                        <h4><span class="en">Abstract</span><span class="zh">摘要</span></h4>
+                        <p>
+                            <span class="en">Large language models (LLMs) can generate query expansions without task-specific training, yet the same expansions often make a frozen dense retriever worse. We identify an underexplored factor: prior work has often focused on what text is generated, while how generated text is incorporated into dense retrievers has received less systematic attention. By holding generated expansions fixed, we show that performance degradation can often be attributed to the integration method itself. We introduce AnchorQE, a training-free method that separately encodes the original query and its expansion before interpolating them. The interpolation factor is estimated using an unsupervised online strategy that operates over a small part of the unlabeled test stream. Intuitively, our strategy assigns high expansion trust only when expansions are both retrieval-strong and consistent with the original query's retrieved evidence. We show that AnchorQE improves retrieval effectiveness by up to 12.89% when compared to widely-used expansion-only or text-level concatenation baselines across TREC-DL, LoTTE, and BEIR. Further, we show that our online strategy to estimate the interpolation factor outperforms a fixed weight tuned on a development partition by up to 3.81%.</span>
+                            <span class="zh">大语言模型（LLM）无需任务特定训练即可生成查询扩展，但相同的扩展文本往往会降低冻结稠密检索器的效果。我们指出了一个尚未被充分研究的因素：既有工作通常关注生成了什么文本，而对生成文本如何接入稠密检索器缺少系统性分析。通过固定生成的扩展内容，我们发现性能下降往往源于整合方式本身。为此，我们提出 AnchorQE：一种无需训练的方法，先分别编码原始查询与扩展，再对二者进行插值。插值系数由无监督在线策略估计，该策略仅使用一小部分无标签测试流；只有当扩展既具备较强检索能力，又与原始查询检索到的证据一致时，系统才会赋予其较高权重。与常用的仅扩展输入或文本级拼接基线相比，AnchorQE 在 TREC-DL、LoTTE 和 BEIR 上的检索有效性最高提升 12.89%；其在线权重估计策略也比在开发集上调优的固定权重最高提升 3.81%。</span>
+                        </p>
+                    </div>
+
+                    <div class="publication-panel publication-bibtex-panel" id="bibtex-anchorqe" hidden>
+                        <div class="publication-panel-heading">
+                            <h4>BibTeX</h4>
+                            <button class="copy-bibtex" type="button" data-copy-target="bibtex-anchorqe-code" aria-live="polite">
+                                <span class="en">Copy</span><span class="zh">复制</span>
+                            </button>
+                        </div>
+                        <pre><code id="bibtex-anchorqe-code">@misc{sun2026queryexpansion,
+  title         = {Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration},
+  author        = {Sun, Siyuan and Surdeanu, Mihai},
+  year          = {2026},
+  eprint        = {2608.25521},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2608.25521}
+}</code></pre>
+                    </div>
+
+                    <div class="tags publication-tags" aria-label="Research topics">
+                        <span>Information Retrieval</span>
+                        <span>Dense Retrieval</span>
+                        <span>Query Expansion</span>
+                        <span>LLMs</span>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
