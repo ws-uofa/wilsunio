@@ -123,6 +123,75 @@ body {
 
 .footer { text-align: center; padding: 40px 20px; font-size: 13px; color: var(--text-secondary); }
 
+/* Outline profile icons above the copyright */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.footer-links .footer-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d1d1d6;
+    border-radius: 12px;
+    background: transparent;
+    color: #6e6e73;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.18s ease, border-color 0.18s ease,
+                background-color 0.18s ease, transform 0.18s ease;
+}
+
+.footer-icon svg {
+    display: block;
+    flex: none;
+    width: 22px;
+    height: 22px;
+}
+
+@media (hover: hover) {
+    .footer-links .footer-icon:hover {
+        color: var(--text-primary);
+        border-color: #aaaab0;
+        background: rgba(29, 29, 31, 0.035);
+        transform: translateY(-1px);
+    }
+}
+
+.footer-links .footer-icon:focus-visible {
+    color: var(--text-primary);
+    border-color: #aaaab0;
+    outline: 2px solid var(--text-secondary);
+    outline-offset: 4px;
+}
+
+.footer-links .footer-icon:active {
+    background: rgba(29, 29, 31, 0.065);
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-links .footer-icon {
+        transition: none;
+    }
+
+    .footer-links .footer-icon:hover {
+        transform: none;
+    }
+}
+
+
 /* =========================================
    双语切换逻辑 (默认显示英文 EN)
    ========================================= */
