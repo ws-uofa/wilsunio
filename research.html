@@ -53,6 +53,16 @@
                         <span class="en"><strong>Core method.</strong> A causal memory predictor uses preceding context to predict continuous memory vectors for each chunk, supervised by offline-retrieved chunk embeddings. Tokens within a chunk share this memory; gated cross-attention injects it into selected intermediate decoder layers. Memory prediction and fusion are trained jointly with memory-supervision and language-modeling objectives, while the backbone stays frozen. Inference requires no explicit retrieval.</span>
                         <span class="zh"><strong>核心方法：</strong>因果记忆预测器根据前文，为每个文本块预测连续记忆向量，并以离线检索得到的文本块嵌入作为监督。同一块内的词元共享记忆，再通过门控交叉注意力将其注入选定的解码器中间层。记忆预测与融合模块在记忆监督和语言建模目标下联合训练，主模型保持冻结；推理时无需显式检索。</span>
                     </p>
+                    <figure class="research-figure">
+                        <a class="research-figure-image" href="assets/dfm_architecture_final.pdf" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/dfm_architecture_final.webp" width="2200" height="1198" alt="Deep Fusion Memory architecture showing memory prediction with offline supervision, the LLM backbone, and gated memory fusion." loading="lazy" decoding="async">
+                        </a>
+                        <figcaption>
+                            <span class="en"><strong>DFM architecture.</strong> (a) Predicting chunk-level memory with offline supervision; (b) injecting shared memory into the LLM backbone; (c) combining memory cross-attention with self-attention through per-head gates.</span>
+                            <span class="zh"><strong>DFM 架构。</strong>（a）以离线检索为监督预测 chunk-level 记忆；（b）将共享记忆注入 LLM 主干；（c）通过逐头门控，将记忆交叉注意力与自注意力融合。</span>
+                            <a href="assets/dfm_architecture_final.pdf" target="_blank" rel="noopener noreferrer"><span class="en">View full-size ↗</span><span class="zh">查看高清原图 ↗</span></a>
+                        </figcaption>
+                    </figure>
                     <p class="item-desc">
                         <span class="en"><strong>Main results.</strong> Across six QA tasks, DFM improves the average score over the strongest baseline by <strong>12.71%</strong> on Mistral-7B-v0.3 and <strong>11.19%</strong> on Qwen3-8B-Base. Adaptation across code, mathematics, and law yields average gains of <strong>6.51</strong> and <strong>4.38 points</strong> over Qwen3-4B-Base and Qwen3-8B-Base. Compared with token-level parametric memory, training-data construction requires <strong>32× fewer retrieval queries</strong> and <strong>2048× fewer retrieved items</strong>.</span>
                         <span class="zh"><strong>主要结果：</strong>在六项问答任务上，DFM 相较最强基线的平均得分，在 Mistral-7B-v0.3 和 Qwen3-8B-Base 上分别相对提升 <strong>12.71%</strong> 和 <strong>11.19%</strong>。在代码、数学与法律领域适应中，相较 Qwen3-4B-Base 和 Qwen3-8B-Base，平均提升 <strong>6.51</strong> 和 <strong>4.38 分</strong>。与词元级参数化记忆相比，训练数据构建所需的<strong>检索查询量降至 1/32</strong>，<strong>检索条目量降至 1/2048</strong>。</span>

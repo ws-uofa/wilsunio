@@ -105,6 +105,40 @@ body {
 .item-link:hover { opacity: 1; text-decoration: none !important; }
 .item-desc { margin-bottom: 12px !important; }
 
+/* Architecture figures within research descriptions */
+.research-figure {
+    margin: 20px 0 24px;
+}
+
+.content-block .research-figure-image {
+    display: block;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.research-figure-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.research-figure-image:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+.research-figure figcaption {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.content-block .research-figure figcaption a {
+    margin: 0;
+    white-space: nowrap;
+}
+
 .sub-task {
     margin-left: 20px;
     padding-left: 20px;
