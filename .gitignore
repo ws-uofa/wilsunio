@@ -5,3 +5,27 @@
 .env*
 !.env.example
 .DS_Store
+
+# Local AI coding agent instructions, configuration, and work files
+AGENTS.md
+agents.md
+AGENTS.override.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.agents/
+.codex/
+.claude/
+.cursor/
+.cursorrules
+.windsurf/
+.windsurfrules
+.aider*
+.clinerules/
+.clinerules
+.roo/
+.roorules
+.github/copilot-instructions.md
+.github/instructions/
+.github/agents/
+.github/prompts/
