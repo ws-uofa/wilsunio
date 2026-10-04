@@ -134,11 +134,6 @@ body {
     line-height: 1.65;
 }
 
-.content-block .research-figure figcaption a {
-    margin: 0;
-    white-space: nowrap;
-}
-
 .sub-task {
     margin-left: 20px;
     padding-left: 20px;
