@@ -409,20 +409,18 @@ body.lang-zh .zh { display: inline; }
     gap: 20px;
 }
 
-.publication-count {
-    color: var(--text-secondary);
-    font-family: monospace;
-    font-size: 13px;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
 .publication-list {
     width: 100%;
 }
 
 .publication-entry {
     padding-bottom: 2px;
+}
+
+.publication-entry + .publication-entry {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #e5e5ea;
 }
 
 .publication-badges {
