@@ -17,6 +17,10 @@ function applyLanguage(lang) {
     body.classList.toggle("lang-zh", isChinese);
     document.documentElement.lang = isChinese ? "zh-CN" : "en";
 
+    document.querySelectorAll("[data-cv-link]").forEach((link) => {
+        link.setAttribute("href", isChinese ? "assets/cv_zh.pdf" : "assets/cv.pdf");
+    });
+
     if (langToggle) {
         langToggle.textContent = isChinese ? "EN" : "中文";
         langToggle.setAttribute(
