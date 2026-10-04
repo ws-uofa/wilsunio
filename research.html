@@ -41,51 +41,56 @@
                 <div class="item">
                     <div class="item-header">
                         <h3>
-                            <span class="en">Ongoing: <strong>Joint optimization of Neural Retrieval System</strong></span>
-                            <span class="zh">Ongoing: <strong>Joint optimization of Neural Retrieval System</strong></span>
+                            <span class="en">Deep Fusion Memory: Chunk-Level Parametric Memory</span>
+                            <span class="zh">Deep Fusion Memory：块级参数化记忆</span>
                         </h3>
                     </div>
                     <p class="item-desc">
-                        <span class="en">
-                            This research aims to develop a unified joint-optimization framework for neural information retrieval, 
-                            leveraging state-of-the-art open-source foundations (e.g. Qwen2.5-7B and BGE-Reranker-v2). 
-                            By implementing an end-to-end co-training paradigm across the dense retriever, query expander, and reranker, 
-                            the system facilitates multi-stage information propagation to transcend the performance ceilings inherent in isolated trained, modular components.
-                        </span>
-                        <span class="zh">本研究旨在构建一套针对神经信息检索的统一联合优化框架，并充分利用前沿的开源基础模型（例如 Qwen2.5-7B 和 BGE-Reranker-v2）。通过在稠密检索器、查询扩展器和重排序器之间实施端到端的协同训练范式，该系统得以实现多阶段的信息高效传递，从而突破了各模块独立训练时所固有的性能瓶颈。</span>
+                        <span class="en"><strong>Research question.</strong> How can an LLM acquire external knowledge efficiently and use it during generation? Continued pretraining can cause forgetting, while retrieval-augmented generation adds online search overhead. Deep Fusion Memory (DFM) learns external knowledge in an added memory module and integrates it into a frozen LLM's internal computation.</span>
+                        <span class="zh"><strong>研究问题：</strong>如何让大语言模型高效学习外部知识，并在生成过程中有效利用？继续预训练可能造成知识遗忘，而检索增强生成需要承担在线搜索开销。Deep Fusion Memory（DFM）通过新增记忆模块学习外部知识，并将其融入冻结大语言模型的内部计算。</span>
                     </p>
-                    <div class="tags"><span>Neural IR</span><span>End-to-end optimization</span><span>Dense Retrieval</span><span>Query Exansion</span><span>Reranking</span></div>
+                    <p class="item-desc">
+                        <span class="en"><strong>Core method.</strong> A causal memory predictor uses preceding context to predict continuous memory vectors for each chunk, supervised by offline-retrieved chunk embeddings. Tokens within a chunk share this memory; gated cross-attention injects it into selected intermediate decoder layers. Memory prediction and fusion are trained jointly with memory-supervision and language-modeling objectives, while the backbone stays frozen. Inference requires no explicit retrieval.</span>
+                        <span class="zh"><strong>核心方法：</strong>因果记忆预测器根据前文，为每个文本块预测连续记忆向量，并以离线检索得到的文本块嵌入作为监督。同一块内的词元共享记忆，再通过门控交叉注意力将其注入选定的解码器中间层。记忆预测与融合模块在记忆监督和语言建模目标下联合训练，主模型保持冻结；推理时无需显式检索。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en"><strong>Main results.</strong> Across six QA tasks, DFM improves the average score over the strongest baseline by <strong>12.71%</strong> on Mistral-7B-v0.3 and <strong>11.19%</strong> on Qwen3-8B-Base. Adaptation across code, mathematics, and law yields average gains of <strong>6.51</strong> and <strong>4.38 points</strong> over Qwen3-4B-Base and Qwen3-8B-Base. Compared with token-level parametric memory, training-data construction requires <strong>32× fewer retrieval queries</strong> and <strong>2048× fewer retrieved items</strong>.</span>
+                        <span class="zh"><strong>主要结果：</strong>在六项问答任务上，DFM 相较最强基线的平均得分，在 Mistral-7B-v0.3 和 Qwen3-8B-Base 上分别相对提升 <strong>12.71%</strong> 和 <strong>11.19%</strong>。在代码、数学与法律领域适应中，相较 Qwen3-4B-Base 和 Qwen3-8B-Base，平均提升 <strong>6.51</strong> 和 <strong>4.38 分</strong>。与词元级参数化记忆相比，训练数据构建所需的<strong>检索查询量降至 1/32</strong>，<strong>检索条目量降至 1/2048</strong>。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en">Under review at ICLR 2027.</span><span class="zh">ICLR 2027 审稿中。</span>
+                        <a href="assets/19306.pdf" class="item-link" target="_blank" rel="noopener noreferrer">[PDF]</a>
+                    </p>
+                    <div class="tags"><span>LLMs</span><span>Parametric Memory</span><span>Knowledge Injection</span><span>Domain Adaptation</span></div>
+                </div>
 
-                    <div class="sub-task">
-                        <div class="item-header">
-                            <h4>
-                                <span class="en">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
-                                <span class="zh">-- Sub task: <strong>Reward-Guided Alignment of LLM-Based Query Expansion</strong></span>
-                            </h4>
-                        </div>
-                        <p class="item-desc">
-                            <span class="en">
-                                <strong>Innovative Architecture</strong>: We designed and implemented an end-to-end EM optimization framework. Through E-Step—which utilizes an LLM to explore diverse expansion paths and employs a Reranker to evaluate rewards—and the M-Step—which performs LoRA fine-tuning based on high-reward samples—this framework enables the generative model to precisely align with the preferences of the retriever.
-                            </span>
-                            <span class="zh"><strong>创新架构</strong>：设计并实现了一套端到端的 EM 优化框架，通过 E-Step（利用 LLM 探索多样化扩展路径并由 Reranker 评估奖励）与 M-Step（基于高奖励样本进行 LoRA 微调）的交替迭代，使生成模型精准对齐检索器的偏好</span>
-                        </p>
-                        <p class="item-desc">
-                            <span class="en">
-                                <strong>Reward-Guided Learning</strong>: The introduction of the Reward Margin mechanism and the DDLP (Delta-Driven Laziness-Penalty) loss function effectively resolves the "negative return" problem in query expansion, guarenteed better performance and Generalization Capability.
-                            </span>
-                            <span class="zh"><strong>基于奖励的学习</strong>：引入 Reward Margin 机制 与 DDLP (Delta-Driven Laziness-Penalty) 损失函数，有效解决了查询扩展中的“负收益”问题，确保检索性能和泛化能力。</span>
-                        </p>
-                        <p class="item-desc">
-                            <span class="en">
-                                <strong>Inspiring Result</strong>: Achieved a 4% absolute gain in NDCG@10 on the TREC DL 2019 benchmark by integrating the fine-tuned Query Expander into a state-of-the-art Retrieve-and-Rerank pipeline.
-                            </span>
-                            <span class="zh"><strong>结果提升</strong>：通过将经过微调的查询扩展器集成至最先进的“检索-重排”流水线中，在 TREC DL 2019 基准测试上实现了 NDCG@10 4% 的绝对提升。</span>
-                        </p>
-                        <div class="tags"><span>LLM-based QE</span><span>EM Algorithm</span><span>Reward-Guided Alignment</span><span>Cross-Encoder Reranker</span></div>
+                <div class="item">
+                    <div class="item-header">
+                        <h3>
+                            <span class="en">AnchorQE: Better Integration for Dense Query Expansion</span>
+                            <span class="zh">AnchorQE：面向稠密检索的查询扩展整合</span>
+                        </h3>
                     </div>
+                    <p class="item-desc">
+                        <span class="en"><strong>Research question.</strong> Why can LLM-generated query expansions hurt a frozen dense retriever? By holding generated text fixed and varying only its integration, this work shows that retrieval quality depends on <strong>how expansions enter the retriever</strong>, as well as what the LLM generates. Expansion-only retrieval can lose the original intent, while text concatenation entangles the query and expansion without explicitly controlling their influence.</span>
+                        <span class="zh"><strong>研究问题：</strong>为什么大语言模型生成的查询扩展，反而可能降低冻结稠密检索器的效果？通过固定生成文本、仅改变整合方式，本研究表明：检索质量不仅取决于生成内容，也取决于<strong>扩展如何接入检索器</strong>。仅使用扩展可能丢失原始意图，而文本拼接将查询与扩展混合编码，无法显式控制二者的影响。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en"><strong>Core method.</strong> AnchorQE separately encodes the original query and expansion, then interpolates their normalized vectors with the query as an explicit anchor. An unsupervised online strategy estimates the expansion weight from a small unlabeled stream prefix, assigning greater trust when expansions retrieve strongly and agree with the query's retrieved evidence. After calibration, each query uses one combined vector and one index request, without retraining the retriever or rebuilding its index.</span>
+                        <span class="zh"><strong>核心方法：</strong>AnchorQE 分别编码原始查询与扩展，再对归一化向量进行插值，以原始查询作为显式锚点。无监督在线策略利用查询流开头的一小部分无标签查询估计扩展权重；只有当扩展的检索能力较强，且与原始查询检索到的证据一致时，才赋予较高信任。校准后，每个查询仅使用一个融合向量、发起一次索引检索，无需重新训练检索器或重建索引。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en"><strong>Main results.</strong> Across TREC-DL, LoTTE, and BEIR, AnchorQE improves retrieval effectiveness by up to <strong>12.89%</strong> over expansion-only or text-concatenation baselines, using the same generated expansions. Online weight estimation also outperforms a fixed weight tuned on a development partition by up to <strong>3.81%</strong>, without task-specific training or relevance labels for calibration.</span>
+                        <span class="zh"><strong>主要结果：</strong>在 TREC-DL、LoTTE 与 BEIR 上，使用相同的生成扩展，AnchorQE 相较仅使用扩展或文本拼接的基线，检索有效性最高相对提升 <strong>12.89%</strong>。在线权重估计相较在开发集上调优的固定权重，最高相对提升 <strong>3.81%</strong>，且无需任务特定训练或用于校准的相关性标注。</span>
+                    </p>
+                    <p class="item-desc">
+                        <span class="en">Under review at WSDM 2027.</span><span class="zh">WSDM 2027 审稿中。</span>
+                        <a href="https://arxiv.org/abs/2608.25521" class="item-link" target="_blank" rel="noopener noreferrer">[arXiv]</a>
+                        <a href="https://arxiv.org/pdf/2608.25521" class="item-link" target="_blank" rel="noopener noreferrer">[PDF]</a>
+                    </p>
+                    <div class="tags"><span>Information Retrieval</span><span>Dense Retrieval</span><span>Query Expansion</span><span>LLMs</span></div>
                 </div>
             </div>
-
 
         </section>
 
