@@ -1,0 +1,163 @@
+%-------------------------
+% 优化版中文简历 - 孙思源
+% 编译器建议：XeLaTeX
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+% --- 中文字体配置 (针对 Overleaf 优化) ---
+\usepackage[UTF8, fontset=none]{ctex}
+% 主字体采用仿宋，标题采用黑体，增强层次感
+\setCJKmainfont[BoldFont=FandolHei-Regular.otf, ItalicFont=FandolKai-Regular.otf]{FandolFang-Regular.otf}
+\setCJKsansfont{FandolHei-Regular.otf}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 调整页边距
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% 标题格式优化：去掉 scshape (不适合中文)，使用粗体
+\titleformat{\section}{
+  \vspace{-5pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% 自定义命令优化
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%---------- 个人信息 ----------
+\begin{center}
+    {\Huge \textbf{孙思源}} \\ \vspace{4pt}
+    \small \href{mailto:wilsonsun@arizona.edu}{\underline{wilsonsun@arizona.edu}} $|$
+    \href{https://wilsun.io}{\underline{wilsun.io (个人主页)}} $|$
+    \href{https://github.com/ws-uofa}{\underline{github.com/ws-uofa}} \\
+    \small 美国亚利桑那州图森 / 中国上海
+\end{center}
+
+%----------- 教育背景 -----------
+\section{教育背景}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {亚利桑那大学 (University of Arizona)}{图森, 美国}
+      {人工智能理学学士; GPA: 4.0/4.0}{2025年8月 -- 2027年5月 (预计毕业)}
+      \resumeItemListStart
+        \resumeItem{\textbf{相关课程:} NLP深度学习, 神经网络, 强化学习, 机器学习原理, 文本检索与 Web 搜索。}
+      \resumeItemListEnd
+    \resumeSubheading
+      {华东理工大学}{上海, 中国}
+      {人工智能理学学士 (后转学至亚利桑那大学)}{2023年9月 -- 2025年7月}
+  \resumeSubHeadingListEnd
+
+%----------- 科研经历 -----------
+\section{科研经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {上海交通大学 LUMIA Lab}{上海, 中国}
+      {研究实习生 (导师: 林洲汉教授)}{2026年4月 -- 至今}
+      \resumeItemListStart
+        \resumeItem{研究\textbf{大语言模型参数化记忆}、大语言模型预训练与测试时训练 (TTT)。}
+      \resumeItemListEnd
+    \resumeSubheading
+      {亚利桑那大学 CLULab}{图森, 美国}
+      {本科研究助理 (导师: Mihai Surdeanu 教授)}{2025年9月 -- 至今}
+      \resumeItemListStart
+        \resumeItem{在\textbf{大语言模型与信息检索}交叉领域开展研究，关注 Transformer 神经检索系统优化与查询扩展整合。}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%----------- 专业技能 -----------
+\section{专业技能}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{编程与工具}{: Python, C/C++, Java, Shell, Linux, Git} \\
+     \textbf{深度学习框架}{: PyTorch; Hugging Face Transformers, Accelerate, PEFT, TRL} \\
+     \textbf{检索与训练}{: FAISS, Elasticsearch, Milvus; 多 GPU 训练, 混合精度训练 (FP16/BF16)}
+    }}
+ \end{itemize}
+
+%----------- 代表性研究与项目 -----------
+\section{代表性研究与项目}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {Deep Fusion Memory (DFM) $|$ \emph{大语言模型, 参数化记忆}}{ICLR 2027 (审稿中)}
+          \resumeItemListStart
+            \resumeItem{\href{https://wilsun.io/assets/19306.pdf}{\textit{Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models.}} 学习文本块级参数化记忆，通过门控交叉注意力融入冻结大语言模型，推理时无需显式检索。}
+            \resumeItem{在六项问答任务上，相较最强基线，Mistral-7B / Qwen3-8B 平均得分相对提升 \textbf{12.71\% / 11.19\%}；领域适应相较 Qwen3-4B / 8B 平均提升 \textbf{6.51 / 4.38 分}。}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {AnchorQE $|$ \emph{稠密检索, 查询扩展整合}}{WSDM 2027 (审稿中)}
+          \resumeItemListStart
+            \resumeItem{\href{https://arxiv.org/abs/2608.25521}{\textit{Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration.}} Siyuan Sun 与 Mihai Surdeanu，2026。分别编码查询与扩展，再通过无监督在线权重估计进行向量插值。}
+            \resumeItem{无需任务特定训练，在 TREC-DL、LoTTE 与 BEIR 上检索有效性最高相对提升 \textbf{12.89\%}；在线校准相较开发集调优的固定权重最高相对提升 \textbf{3.81\%}。}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {创意文本中的情感分类 $|$ \emph{RoBERTa, 领域迁移}}{}
+          \resumeItemListStart
+            \resumeItem{以两阶段训练将社交媒体情感先验迁移至诗歌/歌词，对比四种微调策略，全参数微调效果最佳（诗歌 $F1\approx0.60$）。}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {国际象棋中的稠密奖励函数学习 $|$ \emph{Gymnasium, ResNet, IRL}}{}
+          \resumeItemListStart
+            \resumeItem{从专家棋谱推断稠密奖励，构建自定义 Gymnasium 环境与 ResNet 奖励模型，以显著性图分析验证类人局面直觉。}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Brain-to-Text: 解码皮层内语音信号 $|$ \emph{BERT, GPT-2, LoRA}}{Brain-to-Text '25}
+          \resumeItemListStart
+            \resumeItem{结合掩码音素建模与 LoRA 构建 BERT--GPT-2 神经语音解码器，达到 \textbf{12.4\% WER}，并通过日期特定自适应层处理非平稳神经信号。}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\end{document}

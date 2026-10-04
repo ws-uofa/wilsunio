@@ -1,0 +1,174 @@
+%-------------------------
+% Resume in Latex
+% Author : Siyuan (Wilson) Sun
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Siyuan (Wilson) Sun} \\ \vspace{2pt}
+    \small \href{mailto:wilsonsun@arizona.edu}{\underline{wilsonsun@arizona.edu}} $|$
+    \href{https://wilsun.io}{\underline{wilsun.io (Personal Page)}} $|$
+    \href{https://github.com/ws-uofa}{\underline{github.com/ws-uofa}} $|$
+    \small Tucson, AZ / Shanghai, China
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Arizona}{Tucson, AZ}
+      {B.S. in Artificial Intelligence; GPA: 4.0/4.0}{Aug. 2025 -- May 2027 (Expected)}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework:} Deep Learning for NLP, Neural Networks, Reinforcement Learning, Principles of ML, Text Retrieval and Web Search.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {East China University of Science and Technology}{Shanghai, China}
+      {B.S. in Artificial Intelligence (Transferred to UArizona)}{Sep. 2023 -- July 2025}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {LUMIA Lab, Shanghai Jiao Tong University}{Shanghai, China}
+      {Research Intern (Advised by Prof. Zhouhan Lin)}{Apr. 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Researching \textbf{parametric memory for LLMs}, LLM pretraining, and test-time training (TTT).}
+      \resumeItemListEnd
+    \resumeSubheading
+      {CLULab, University of Arizona}{Tucson, AZ}
+      {Undergraduate Research Assistant (Advised by Prof. Mihai Surdeanu)}{Sep. 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Researching \textbf{LLMs and Information Retrieval}, with a focus on Transformer-based neural retrieval systems and query expansion integration.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages \& Tools}{: Python, C/C++, Java, Shell, Linux, Git} \\
+     \textbf{Frameworks}{: PyTorch; Hugging Face Transformers, Accelerate, PEFT, TRL} \\
+     \textbf{Retrieval \& Training}{: FAISS, Elasticsearch, Milvus; Multi-GPU Training, Mixed Precision (FP16/BF16)}
+    }}    \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Selected Research \& Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Deep Fusion Memory (DFM)} $|$ \emph{LLMs, Parametric Memory}}{ICLR 2027 (Under Review)}
+          \resumeItemListStart
+            \resumeItem{\href{https://wilsun.io/assets/19306.pdf}{\textit{Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models.}} Learns chunk-level memory and fuses it into a frozen LLM via gated cross-attention; no explicit retrieval at inference.}
+            \resumeItem{Improved average scores over the strongest baseline by \textbf{12.71\% / 11.19\%} on six QA tasks (Mistral-7B / Qwen3-8B); domain adaptation gains of \textbf{6.51 / 4.38 points} on Qwen3-4B / 8B.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{AnchorQE} $|$ \emph{Dense Retrieval, Query Expansion}}{WSDM 2027 (Under Review)}
+          \resumeItemListStart
+            \resumeItem{\href{https://arxiv.org/abs/2608.25521}{\textit{Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration.}} Siyuan Sun and Mihai Surdeanu, 2026. Separately encodes queries and expansions, then interpolates their vectors using an unsupervised online weight estimate.}
+            \resumeItem{Improved retrieval effectiveness by up to \textbf{12.89\%} across TREC-DL, LoTTE, and BEIR without task-specific training; online calibration beat development-tuned fixed weights by up to \textbf{3.81\%}.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Emotion Classification in Creative Text} $|$ \emph{RoBERTa, Domain Adaptation}}{}
+          \resumeItemListStart
+            \resumeItem{Transferred emotional priors from social media to poetry/lyrics with two-stage training; compared four tuning strategies, with full fine-tuning achieving the best poetry $F1\approx0.60$.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Learning Dense Reward Functions in Chess} $|$ \emph{Gymnasium, ResNet, IRL}}{}
+          \resumeItemListStart
+            \resumeItem{Inferred dense rewards from expert chess demonstrations with a custom Gymnasium environment and ResNet reward model; saliency analysis revealed human-like positional patterns.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Brain-to-Text: Decoding Intracortical Speech} $|$ \emph{BERT, GPT-2, LoRA}}{Brain-to-Text '25}
+          \resumeItemListStart
+            \resumeItem{Built a BERT--GPT-2 neural speech decoder using masked phoneme modeling and LoRA, achieving \textbf{12.4\% WER}; a day-specific adaptation layer handled non-stationary neural signals.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
