@@ -43,19 +43,18 @@
                     </div>
 
                     <h3 class="publication-title">
-                        <a href="assets/19306.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="https://arxiv.org/abs/2610.25100" target="_blank" rel="noopener noreferrer">
                             Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models
                         </a>
                     </h3>
 
                     <p class="publication-authors">
-                        <span class="en">Anonymous submission version</span>
-                        <span class="zh">匿名投稿版本</span>
+                        Rubin Wei, <strong>Siyuan Sun</strong>, Hao Sun, Yuliang Liu, Xiang Shi, Jiarui Wang, Junming Zhang, Zhouhan Lin
                     </p>
 
                     <p class="publication-venue">
-                        <span class="en">Under review at <strong>ICLR 2027</strong></span>
-                        <span class="zh">投稿至 <strong>ICLR 2027</strong>，审稿中</span>
+                        <span class="en">Under review at <strong>ICLR 2027</strong> · arXiv:2610.25100</span>
+                        <span class="zh">投稿至 <strong>ICLR 2027</strong>，审稿中 · arXiv:2610.25100</span>
                     </p>
 
                     <p class="publication-highlight">
@@ -64,9 +63,44 @@
                     </p>
 
                     <div class="publication-actions" aria-label="Publication resources">
-                        <a class="publication-action publication-action-primary" href="assets/19306.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the anonymous submission PDF">
+                        <a class="publication-action publication-action-primary" href="https://arxiv.org/abs/2610.25100" target="_blank" rel="noopener noreferrer" aria-label="Open the arXiv abstract page">
+                            arXiv <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="publication-action" href="https://arxiv.org/pdf/2610.25100" target="_blank" rel="noopener noreferrer" aria-label="Open the paper PDF">
                             PDF <span aria-hidden="true">↗</span>
                         </a>
+                        <button class="publication-action publication-toggle" type="button" data-panel-target="abstract-dfm" aria-controls="abstract-dfm" aria-expanded="false">
+                            <span class="en">Abstract</span><span class="zh">摘要</span>
+                        </button>
+                        <button class="publication-action publication-toggle" type="button" data-panel-target="bibtex-dfm" aria-controls="bibtex-dfm" aria-expanded="false">
+                            BibTeX
+                        </button>
+                    </div>
+
+                    <div class="publication-panel" id="abstract-dfm" hidden>
+                        <h4><span class="en">Abstract</span><span class="zh">摘要</span></h4>
+                        <p>
+                            <span class="en">Deep Fusion Memory (DFM) equips a frozen language model with learned external knowledge while avoiding inference-time search. A causal predictor uses preceding context to produce memory vectors, supervised by offline-retrieved chunk embeddings. Tokens in a chunk share this memory, which enters the model's hidden states through gated cross-attention. The predictor and fusion modules are optimized jointly. Chunk-level supervision lowers the cost of constructing memory targets compared with token-level approaches, while fusion inside the decoder enables deeper use of the learned knowledge. Experiments demonstrate improvements on six question-answering tasks and on adaptation to code, mathematics, and law.</span>
+                            <span class="zh">Deep Fusion Memory（DFM）为冻结的语言模型引入外部知识，推理时无需在线检索。因果记忆预测器根据前文生成记忆向量，以离线检索得到的文本块嵌入作为监督。同一文本块内的词元共享记忆，并通过门控交叉注意力将其融入模型隐状态；预测与融合模块联合训练。相比词元级方法，文本块级监督降低了记忆目标的构建开销，而解码器内部的融合使模型能够更深入地利用所学知识。实验在六项问答任务及代码、数学、法律领域适应中取得提升。</span>
+                        </p>
+                    </div>
+
+                    <div class="publication-panel publication-bibtex-panel" id="bibtex-dfm" hidden>
+                        <div class="publication-panel-heading">
+                            <h4>BibTeX</h4>
+                            <button class="copy-bibtex" type="button" data-copy-target="bibtex-dfm-code" aria-live="polite">
+                                <span class="en">Copy</span><span class="zh">复制</span>
+                            </button>
+                        </div>
+                        <pre><code id="bibtex-dfm-code">@misc{wei2026deepfusionmemory,
+  title         = {Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models},
+  author        = {Wei, Rubin and Sun, Siyuan and Sun, Hao and Liu, Yuliang and Shi, Xiang and Wang, Jiarui and Zhang, Junming and Lin, Zhouhan},
+  year          = {2026},
+  eprint        = {2610.25100},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2610.25100}
+}</code></pre>
                     </div>
 
                     <div class="tags publication-tags" aria-label="Research topics">
