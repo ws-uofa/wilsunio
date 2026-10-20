@@ -75,6 +75,13 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumePublication}[4]{
+    \item
+    {\small\textbf{#1}\par}
+    {\small #2\par}
+    {\small\textit{#3} $|$ \nolinkurl{#4}\par}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
@@ -140,17 +147,21 @@
 %-----------PROJECTS-----------
 \section{Publications}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Deep Fusion Memory (DFM)} $|$ \emph{LLMs, Parametric Memory}}{ICLR 2027 (Under Review)}
+      \resumePublication
+          {Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models}
+          {Rubin Wei, \textbf{Siyuan Sun}, Hao Sun, Yuliang Liu, Xiang Shi, Jiarui Wang, Junming Zhang, and Zhouhan Lin}
+          {2026. ICLR 2027 (Under Review)}{https://arxiv.org/abs/2610.25100}
           \resumeItemListStart
-            \resumeItem{\href{https://arxiv.org/abs/2610.25100}{\textit{Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models.}} Rubin Wei, Siyuan Sun, Hao Sun, Yuliang Liu, Xiang Shi, Jiarui Wang, Junming Zhang, and Zhouhan Lin, 2026. Learns chunk-level memory and fuses it into a frozen LLM via gated cross-attention; no explicit retrieval at inference.}
+            \resumeItem{Learns chunk-level memory and fuses it into a frozen LLM via gated cross-attention; no explicit retrieval at inference.}
             \resumeItem{Improved average scores over the strongest baseline by \textbf{12.71\% / 11.19\%} on six QA tasks (Mistral-7B / Qwen3-8B); domain adaptation gains of \textbf{6.51 / 4.38 points} on Qwen3-4B / 8B.}
           \resumeItemListEnd
 
-      \resumeProjectHeading
-          {\textbf{AnchorQE} $|$ \emph{Dense Retrieval, Query Expansion}}{WSDM 2027 (Under Review)}
+      \resumePublication
+          {Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration}
+          {\textbf{Siyuan Sun} and Mihai Surdeanu}
+          {2026. WSDM 2027 (Under Review)}{https://arxiv.org/abs/2608.25521}
           \resumeItemListStart
-            \resumeItem{\href{https://arxiv.org/abs/2608.25521}{\textit{Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration.}} Siyuan Sun and Mihai Surdeanu, 2026. Separately encodes queries and expansions, then interpolates their vectors using an unsupervised online weight estimate.}
+            \resumeItem{Separately encodes queries and expansions, then interpolates their vectors using an unsupervised online weight estimate.}
             \resumeItem{Improved retrieval effectiveness by up to \textbf{12.89\%} across TREC-DL, LoTTE, and BEIR without task-specific training; online calibration beat development-tuned fixed weights by up to \textbf{3.81\%}.}
           \resumeItemListEnd
 
@@ -158,12 +169,6 @@
 
 \section{Selected Projects}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Emotion Classification in Creative Text} $|$ \emph{RoBERTa, Domain Adaptation}}{}
-          \resumeItemListStart
-            \resumeItem{Transferred emotional priors from social media to poetry/lyrics with two-stage training; compared four tuning strategies, with full fine-tuning achieving the best poetry $F1\approx0.60$.}
-          \resumeItemListEnd
-
       \resumeProjectHeading
           {\textbf{Learning Dense Reward Functions in Chess} $|$ \emph{Gymnasium, ResNet, IRL}}{}
           \resumeItemListStart

@@ -66,6 +66,13 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumePublication}[4]{
+    \item
+    {\small\textbf{#1}\par}
+    {\small #2\par}
+    {\small\textit{#3} $|$ \nolinkurl{#4}\par}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
@@ -130,17 +137,21 @@
 %----------- 代表性研究与项目 -----------
 \section{论文产出}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {Deep Fusion Memory (DFM) $|$ \emph{大语言模型, 参数化记忆}}{ICLR 2027 (审稿中)}
+      \resumePublication
+          {Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models}
+          {Rubin Wei, \textbf{Siyuan Sun}, Hao Sun, Yuliang Liu, Xiang Shi, Jiarui Wang, Junming Zhang 与 Zhouhan Lin}
+          {2026。ICLR 2027 (审稿中)}{https://arxiv.org/abs/2610.25100}
           \resumeItemListStart
-            \resumeItem{\href{https://arxiv.org/abs/2610.25100}{\textit{Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models.}} Rubin Wei, Siyuan Sun, Hao Sun, Yuliang Liu, Xiang Shi, Jiarui Wang, Junming Zhang 与 Zhouhan Lin，2026。学习文本块级参数化记忆，通过门控交叉注意力融入冻结大语言模型，推理时无需显式检索。}
+            \resumeItem{学习文本块级参数化记忆，通过门控交叉注意力融入冻结大语言模型，推理时无需显式检索。}
             \resumeItem{在六项问答任务上，相较最强基线，Mistral-7B / Qwen3-8B 平均得分相对提升 \textbf{12.71\% / 11.19\%}；领域适应相较 Qwen3-4B / 8B 平均提升 \textbf{6.51 / 4.38 分}。}
           \resumeItemListEnd
 
-      \resumeProjectHeading
-          {AnchorQE $|$ \emph{稠密检索, 查询扩展整合}}{WSDM 2027 (审稿中)}
+      \resumePublication
+          {Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration}
+          {\textbf{Siyuan Sun} 与 Mihai Surdeanu}
+          {2026。WSDM 2027 (审稿中)}{https://arxiv.org/abs/2608.25521}
           \resumeItemListStart
-            \resumeItem{\href{https://arxiv.org/abs/2608.25521}{\textit{Query Expansion Is More Than Generation: Improving Dense Retrieval through Better Integration.}} Siyuan Sun 与 Mihai Surdeanu，2026。分别编码查询与扩展，再通过无监督在线权重估计进行向量插值。}
+            \resumeItem{分别编码查询与扩展，再通过无监督在线权重估计进行向量插值。}
             \resumeItem{无需任务特定训练，在 TREC-DL、LoTTE 与 BEIR 上检索有效性最高相对提升 \textbf{12.89\%}；在线校准相较开发集调优的固定权重最高相对提升 \textbf{3.81\%}。}
           \resumeItemListEnd
 
@@ -148,12 +159,6 @@
 
 \section{代表性项目}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {创意文本中的情感分类 $|$ \emph{RoBERTa, 领域迁移}}{}
-          \resumeItemListStart
-            \resumeItem{以两阶段训练将社交媒体情感先验迁移至诗歌/歌词，对比四种微调策略，全参数微调效果最佳（诗歌 $F1\approx0.60$）。}
-          \resumeItemListEnd
-
       \resumeProjectHeading
           {国际象棋中的稠密奖励函数学习 $|$ \emph{Gymnasium, ResNet, IRL}}{}
           \resumeItemListStart
